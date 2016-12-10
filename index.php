@@ -82,7 +82,13 @@
 	<!--add the swapi plugin-->
 	
 	</div>
-
+	<div id = "right">
+	
+		<p>Enter the month you were born on to get your Star Wars species Horoscope!</p>
+		<input type = "text" id  = "M" name= "input" />	
+		<h4 id = "month"></h4>
+		<input type = "submit" onclick = "speciesFunction()" value = "Get Species" />
+	</div>
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
