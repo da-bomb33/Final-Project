@@ -13,3 +13,10 @@ body{
 	background-size: 100% 355%;
 	background-repeat: no-repeat;
 }
+#right{
+	float: right;
+	background-color: black;
+	max-width:300px;
+	color:brown;
+	margin-top:-323px;
+}
