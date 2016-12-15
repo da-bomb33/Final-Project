@@ -42,41 +42,9 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Star Wars</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Weapons</a>
-                    </li>
-                    <li>
-                        <a href="#">Planets</a>
-                    </li>
-					<li>
-						<a href = "#">Characters</a>					
-						
-					</li>
-                    <li>
-                        <a href="contact.php">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+      <?php
+	include"header.php";
+   ?>
 	
     <!-- Page Content -->
 	<div class = "center">
@@ -88,7 +56,7 @@
 	<p>search the web for related content</p>
 	<form action = "http://www.google.com/search" method= "get" onSubmit = "searchFunction(this)">
 	<input name="q" type="hidden" />
-	<input name="qfront" type="text" style="width: 180px" /> <input type="submit" value="Search" />
+	<input name="qfront" type="text" style="width: 180px" />Â <input type="submit" value="Search" />
 	</form>
 	<br>
 	<br>
