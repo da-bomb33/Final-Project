@@ -97,7 +97,33 @@
 	Comments:<br> <textarea name="textform" rows = "10" cols = "30" id = "textform"></textarea><br><br>
 	<input type = "submit" name = "comment" value = "submit"/>
 	</form>
-	
+	<p>Recent Comments:</p>
+	<?php
+		$dbhost = 'localhost';
+		$dbuser = 'root';
+		$dbpass = '';
+		$db = 'users';
+		//creating the connetion
+		$conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+		//checking the connection
+		if($conn->connect_error){
+			die('connection failed: ' . $conn->connect_error);
+		}		
+		if(isset($_POST['comment'])){
+		$sql = "SELECT Name, comment from usertable ORDER BY Name DESC LIMIT 8";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				echo "name: " . $row["Name"]. "<br>". " " . $row["comment"]. "<br><hr>";
+			}
+		}
+		else {
+		echo "0 results";
+		}
+		}
+	$conn->close();
+	?>
 	</div>
 
     <!-- jQuery Version 1.11.1 -->
