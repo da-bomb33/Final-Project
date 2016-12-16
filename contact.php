@@ -1,4 +1,33 @@
 <!DOCTYPE html>
+<?php
+		$dbhost = 'localhost';
+		$dbuser = 'root';
+		$dbpass = '';
+		$db = 'users';
+		//creating the connetion
+		$conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+		//checking the connection
+		if($conn->connect_error){
+			die('connection failed: ' . $conn->connect_error);
+		}
+		if(isset($_POST['comment'])){
+		$name = $_POST['name'];
+		$comment = $_POST['textform'];
+		
+		
+		$sql = "INSERT INTO usertable (Name, comment)
+		VALUES ('$name', '$comment')";
+		if($conn->query($sql) === true){
+			echo "<script> alert('Comment has been queried thank you for your support!')</script>";
+			
+		}
+		else{
+			echo "<script>alert('the connection could not been established please reload the page and try again!')</script>";
+		}
+		}
+	$conn->close();
+	
+	?>
 <html lang="en">
 
 <head>
@@ -61,10 +90,13 @@
 	<br>
 	<br>
 	<br>
-	<!--php post method-->
+	<!--php post method-->	
 	<p>Send Feedback</p>
-	<textarea name ="textform" width = "190px" height = "200px"></textarea><br>
-	<input type = "button" name = "commentButton" method = "post" value = "submit">
+	<form action = "" method = "POST">
+	Name: <input type = "text" name = "name" id = "name"/><br><br>
+	Comments:<br> <textarea name="textform" rows = "10" cols = "30" id = "textform"></textarea><br><br>
+	<input type = "submit" name = "comment" value = "submit"/>
+	</form>
 	
 	</div>
 
