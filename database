@@ -1,0 +1,4 @@
+CREATE TABLE `usertable` (
+  `Name` varchar(45) NOT NULL,
+  `comment` varchar(500) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
